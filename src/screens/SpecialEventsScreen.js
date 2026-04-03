@@ -38,10 +38,10 @@ export default function SpecialEventsScreen({ navigation }) {
 
   const filtered =
     filter === 'thisWeek'
-      ? events.filter(isThisWeek)
+      ? events.filter(isThisWeek).reverse()
       : filter === 'upcoming'
-        ? events.filter(isUpcoming)
-        : events.filter((e) => !isUpcoming(e)).reverse();
+        ? events.filter(isUpcoming).reverse()
+        : events.filter((e) => !isUpcoming(e));
 
   return (
     <View style={styles.container}>
